@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HOTSPOTS, SafetyLocation } from '../../services/mockData';
+import { HOTSPOTS, SafetyLocation } from '../../../database/mockData';
 
 // Function to calculate distance (Haversine formula simplified or simple Euclidean for small area)
 // Euclidean is fine for small city scale MVP

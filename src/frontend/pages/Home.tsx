@@ -6,6 +6,8 @@ import SOSButton from '../features/Safety/SOSButton';
 import ShareLocationButton from '../features/Safety/ShareLocationButton';
 import RouteFinder from '../features/Routing/RouteFinder';
 import GeofenceWatcher from '../features/Safety/GeofenceWatcher';
+import AnomalyAlert from '../../aiml/AnomalyAlert';
+import CommunitySOS from '../features/Safety/CommunitySOS';
 
 const Home: React.FC = () => {
     const [showRouteFinder, setShowRouteFinder] = useState(false);
@@ -45,9 +47,11 @@ const Home: React.FC = () => {
 
             {showRouteFinder && <RouteFinder onClose={() => setShowRouteFinder(false)} />}
 
+            <AnomalyAlert />
             <SafetyMap />
             <SOSButton />
             <ShareLocationButton />
+            <CommunitySOS />
             <GeofenceWatcher />
             <Navigation />
         </div>

@@ -103,3 +103,34 @@ export const HOTSPOTS: SafetyLocation[] = [
         peakTime: ''
     }
 ];
+
+// Helper to generate random safe spots around a user's location
+export const generateSafeSpots = (centerLat: number, centerLng: number): SafetyLocation[] => {
+    const spots: SafetyLocation[] = [];
+    const types = [
+        { name: 'Police Station', type: 'Station' },
+        { name: '24/7 Pharmacy', type: 'Safe Zone' },
+        { name: 'Pink Booth', type: 'Help Desk' },
+        { name: 'Metro Station', type: 'Transport Hub' }
+    ];
+
+    for (let i = 0; i < 6; i++) {
+        // Random offset within ~2-3km
+        const latOffset = (Math.random() - 0.5) * 0.04;
+        const lngOffset = (Math.random() - 0.5) * 0.04;
+        const selectedType = types[Math.floor(Math.random() * types.length)];
+
+        spots.push({
+            id: `gen_${Date.now()}_${i}`,
+            name: `${selectedType.name} - ${Math.floor(Math.random() * 100)}`,
+            lat: centerLat + latOffset,
+            lng: centerLng + lngOffset,
+            riskLevel: 'SafeStop',
+            type: selectedType.type,
+            description: 'Verified Safe Spot with 24/7 surveillance.',
+            incidents: 0,
+            peakTime: ''
+        });
+    }
+    return spots;
+};

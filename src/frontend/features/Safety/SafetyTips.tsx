@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from '../../components/Navigation';
+import VoiceChatbot from './VoiceChatbot';
 import { Shield, BookOpen, UserX, Smartphone, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface TipCategory {
@@ -147,13 +148,16 @@ const SafetyTips: React.FC = () => {
                 ))}
             </div>
 
+            {/* AI Assistant Promo */}
+            <div className="glass-panel" style={{ marginTop: '25px', padding: '20px', background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2))', border: '1px solid var(--accent)' }}>
+                <h3 style={{ margin: '0 0 10px', color: 'var(--accent)' }}>Need Advice?</h3>
+                <p style={{ fontSize: '0.9rem', margin: 0 }}>
+                    Tap the <strong>Chat Icon</strong> to speak with our AI Safety Assistant. She works hands-free!
+                </p>
+            </div>
+
+            <VoiceChatbot />
             <Navigation />
-            <style>{`
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translateY(-10px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-            `}</style>
         </div>
     );
 };

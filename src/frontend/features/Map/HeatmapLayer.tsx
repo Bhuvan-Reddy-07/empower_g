@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import { HOTSPOTS } from '../../services/mockData';
+import { HOTSPOTS } from '../../../database/mockData';
 
 // Standard Leaflet.heat is not installed, so we simulate a heatmap effect 
 // using simple canvas circles (Leaflet.heat under the hood essentially)

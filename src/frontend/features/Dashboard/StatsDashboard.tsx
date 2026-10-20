@@ -2,7 +2,8 @@ import React from 'react';
 import Navigation from '../../components/Navigation';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title, PointElement, LineElement } from 'chart.js';
 import { Doughnut, Bar, Line } from 'react-chartjs-2';
-import { HOTSPOTS } from '../../services/mockData';
+import { HOTSPOTS } from '../../../database/mockData';
+import AIStatusWidget from '../../../aiml/AIStatusWidget';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title, PointElement, LineElement);
 
@@ -57,6 +58,8 @@ const StatsDashboard: React.FC = () => {
                     <p style={{ margin: '0', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Safe Routes Taken</p>
                 </div>
             </div>
+
+            <AIStatusWidget />
 
             <div className="glass-panel" style={{ padding: '20px', marginBottom: '20px' }}>
                 <h3>Recent Trend (7 Days)</h3>

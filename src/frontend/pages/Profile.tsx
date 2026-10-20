@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation';
 import { useAuth } from '../context/AuthContext';
 import { User, Phone, Trash2, Plus, Clock, Shield } from 'lucide-react';
 import FakeCall from '../features/Safety/FakeCall';
-import { db } from '../firebase';
+import { db } from '../../backend/firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 
 const Profile: React.FC = () => {

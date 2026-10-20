@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from '../../components/Navigation';
-import { db } from '../../firebase';
+import { db } from '../../../backend/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { AlertTriangle, MapPin, Send } from 'lucide-react';
